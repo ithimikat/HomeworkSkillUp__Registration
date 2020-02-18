@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+div.container{
+    width: 500px;
+    margin: 0 auto;
+    background-color: yellow;
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px solid gray;
+}
+
+h1{
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+label{
+    margin: 5px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid gray;
+}
+
+span{
+    margin-bottom: 2px;
+}
+
+.btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+button{
+    width: 50%;
+    padding: 3px;
+    border-radius: 4px;
+    height: 30px;
+    font-size: 16px;
+    background-color: #224f90;
+    color: white;
+    outline: none;
+    font-weight: bold;
+    box-shadow: 3px 3px 5px black;
+}
+
+button:active{
+    background-color: dodgerblue;
+}
+
+button:hover{
+    border: 1px solid white;
+}
+
+div.message{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
