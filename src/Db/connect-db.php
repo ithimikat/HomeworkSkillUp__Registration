@@ -16,7 +16,7 @@ class ConnectDb
     //вставка данных в таблицу
     public function insertToDb(array $data) : void
     {
-        if($this->connect !== false){
+        if($this->connect){
             $data = $this->validateData($data);
 
             $firstName = $lastName = $age = $email = $password = null;
@@ -27,8 +27,6 @@ class ConnectDb
                                              '$age', '$email', '$password')";
 
             $res = mysqli_query($this->connect, $query);
-            mysqli_close($this->connect);
-
             $this->showMessage($res);
         }else{
             $this->showMessage(false);
@@ -66,5 +64,10 @@ class ConnectDb
 
             echo $html;
         }
+    }
+
+    public function __destruct()
+    {
+        mysqli_close($this->connect);
     }
 }
