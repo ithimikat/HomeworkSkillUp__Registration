@@ -30,15 +30,18 @@ class ConnectDb
             mysqli_close($this->connect);
 
             $this->showMessage($res);
-        }else {
+        }else{
             $this->showMessage(false);
         }
     }
 
-    //экранирование специальных символов
+    //валидация данных пришедших из формы
     private function validateData(array $data) : array
     {
         foreach ($data as $key => $value){
+            $value = strip_tags($value);
+            $value = htmlspecialchars($value);
+            $value = str_replace(" ", "", $value);
             $data[$key] = mysqli_real_escape_string($this->connect, $value);
         }
         return $data;
