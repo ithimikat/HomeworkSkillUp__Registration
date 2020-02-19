@@ -9,7 +9,7 @@ class ConnectDb
     //соединение с базой
     public function openConnect() : void
     {
-        $conf = require_once(__DIR__ . DIRECTORY_SEPARATOR);
+        $conf = require_once(__DIR__ . DIRECTORY_SEPARATOR . '../config/configDb.php');
         $this->connect = mysqli_connect($conf['host'], $conf['user'], $conf['pass'], $conf['dbname']);
     }
 
